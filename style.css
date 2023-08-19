@@ -1,0 +1,338 @@
+/* ----- Font style ----- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+/* ----- Root ----- */
+
+:root {
+    --light-green: #768575;
+    --regular-green: #006b11;
+    --dark-green: #032d03;
+    --dark-gray: #121412;
+    --light-gray: #bdbdbd;
+}
+
+
+/* ----- Global ----- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    text-align: center;
+    background-color: var(--light-green);
+    color: black;
+}
+
+h5:hover {
+    font-weight: 500;
+}
+
+button:hover {
+    font-weight: 500;
+}
+
+/* ----- Header ----- */
+
+header {
+    display: flex;
+        align-items: center;
+        justify-content: space-between;
+    border-bottom: double var(--light-gray) 4px;
+}
+
+.game-options {
+    display: flex;
+        align-items: center;
+}
+
+.game-options h4 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.option {
+    margin: 15px;
+}
+
+.change-options-instructions {
+    display: flex;
+        gap: 20px;
+    margin: 0 15px;
+}
+
+.instructions-button, .change-options-button {
+    padding: 7px 13px;
+    background-color: var(--regular-green);
+    border-radius: 30%;
+    color: white;
+    font-size: 1em;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+
+/* ----- Main section ----- */
+
+main {
+    display: grid;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 20% 70% 10%;
+    height: 85vh;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.game-title {
+    align-self: center;
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+
+
+/* ----- Life ----- */
+
+.chances {
+    display: none;
+    /* display: flex; */
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    grid-column: 1/2;;
+    grid-row: 2/3;
+}
+
+.hearts {
+    display: flex;
+        flex-direction: column;
+        gap: 20px;
+}
+
+.guesses-left {
+    height: 20px;
+    margin: 5px;
+    width: 20px;
+}
+
+.game-over {
+    color: red;
+    font-weight: bold;
+}
+
+/* ----- Game area ----- */
+
+.game-area {
+    display: grid;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 45% 10% 45%;
+        row-gap: 25px;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: 50vh;
+}
+
+.word-code {
+    display: none;
+    /* display: flex; */
+        flex-wrap: wrap;
+        justify-content: space-around;
+    grid-row: 1/2;
+    grid-column: 1/1;
+}
+
+.guessed-letters {
+    height: 100px;
+    width: 90px;
+    font-size: 5.5em;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: solid 2px white;
+}
+
+.newClass {
+    height: 50px;
+    width: 40px;
+    font-size: 3em;
+}
+
+.space {
+    width: 20px;
+    border: none;
+}
+
+.info-area {
+    display: none;
+    grid-row: 2/3;
+    grid-column: 1/1;
+}
+
+.info-letter {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.input-letter {
+    display: none;
+    grid-row: 3/4;
+    height: 115px;
+    width: 80px;
+    justify-self: center;
+    background-color: white;
+    border: outset black 3px;
+    font-size: 6em;
+    text-align: center;
+    cursor: text;
+}
+
+/* ----- Game preferences ----- */
+
+.game-preferences {
+    display: flex;
+        justify-content: space-around;
+    grid-row: 1/3;
+    grid-column: 1/2;
+}
+
+.game-preferences h4 {
+    margin-top: 50px;
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+.options {
+    margin-top: 25px;
+    padding: 10px;
+    background-color: var(--regular-green);
+    border: outset 2px black;
+    border-radius: 30%;
+    color: white;
+    font-size: 1em;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.theme-choice {
+    display: none;
+}
+
+.selected {
+    background-color: var(--dark-green);
+}
+
+/* ----- Score ----- */
+
+.letter-box {
+    display: none;
+    /* display: flex; */
+        flex-direction: column;
+        gap: 20px;
+        justify-content: start;
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.score {
+    display: flex;
+        flex-direction: column;
+}
+
+.score p {
+    margin: 15px;
+}
+
+/* ----- Letter box ----- */
+
+.letters-used {
+    margin: 15px;
+    letter-spacing: 5px;
+}
+
+/* ----- Restart ----- */
+
+.restart-game {
+    display: flex;
+        justify-content: center;
+    grid-row: 3/4;
+    grid-column: 1/3;
+    width: 100vw;
+}
+
+.restart-game button {
+    align-self: center;
+    height: 75%;
+    width: 10%;
+    background-color: var(--regular-green);
+    color: white;
+    font-size: 1em;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.restart-button, .start-button {
+    display: none;
+}
+
+/* ----- Instructions ----- */
+
+.game-instructions {
+    /* display: none; */
+    grid-row: 2/5;
+    grid-column: 2/2;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background-color: var(--dark-green);
+    border: outset 1px white;
+    color: var(--light-gray);
+    font-size: 0.85em;
+    text-align: start;
+}
+
+.close-instructions {
+    display: none;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+ul > li {
+    margin-left: 20px;
+}
+
+.instructions-header {
+    display: flex;
+        align-items: center;
+        justify-content: space-between;
+    padding: 7px 10px;
+    background-color: var(--dark-gray);
+    border: outset 2px white;
+    color: white;
+}
+
+.instructions-content {
+    padding: 10px 15px 10px 15px;
+}
+
+.instructions-close-button {
+    padding: 1px 7px;
+    background-color: red;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+
+
+

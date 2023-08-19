@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the word game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="game-options">
+
+            <div class="option game-level">
+                <h4>Game level: <span class="level-header">-</span></h4>
+            </div>
+
+            <div class="option game-theme">
+                <h4 >Game theme: <span class="theme-header">-</span></h4>
+            </div>
+
+        </div>
+
+        <div class="change-options-instructions">
+            <button class="instructions-button">Instructions</button>
+            <button class="change-options-button">Change options</button>
+        </div>
+
+    </header>
+
+    <main>
+
+        <section class="game-title">
+            <h1>Guess the secret word</h1>
+        </section>
+
+        <section class="game-area">
+
+            <div class="word-code">
+                <!-- <p class="guessed-letters"></p> -->
+            </div>
+
+            <div class="game-preferences">
+
+                <!-- 1st step -->
+                <div class="level-choice">
+                    <h4>Select the level:</h4>
+                    <h5 class="options level">Easy</h5>
+                    <h5 class="options level">Medium</h5>
+                    <h5 class="options level">Hard</h5>
+                </div>
+
+                <!-- 2nd step -->
+                <div class="theme-choice">
+                    <h4>Select the theme:</h4>
+                    <h5 class="options theme">Animals</h5>
+                    <h5 class="options theme">Fruits</h5>
+                    <h5 class="options theme">Bands/Singers</h5>
+                    <h5 class="options theme">Random</h5>
+                </div>
+
+            </div>
+            
+            <div class="info-area">
+                <p class="info-text"></p>
+            </div>
+
+            <input type="text" class="input-letter">
+
+        </section>
+
+        <div class="game-instructions close-instructions">
+
+            <div class="instructions-header">
+                <h5>GAME INSTRUCTIONS</h5>
+
+                <div>
+                    <p class="instructions-close-button">x</p>
+                </div>
+
+            </div>
+
+            <br>
+
+            <div class="instructions-content">
+
+                <ol>
+
+                    <li>1. Select the level of difficult you wanna play
+
+                        <ul>
+
+                            <li>Easy: 10 chances;</li>
+                            <li>Medium: 5 chances</li>
+                            <li>Hard: 3 chances;</li>
+
+                        </ul>
+
+                    </li>
+
+                    <br>
+
+                    <li>2. Select the theme of the secret word</li>
+
+                    <br>
+
+                    <li>3. Start the game</li>
+
+                    <br>
+
+                </ol>
+
+                <p>Obs. 1: The game only accepts letters as input. Special caracteres and numbers are not valid.</p>
+                <br>
+                <p>Obs. 2: You can restart the game at any time by pressing "Restart". The secret word will change but the theme and the difficulty will remain the same.</p>
+                <br>
+                <p>Obs. 3: To change the difficulty and/or the theme press 'Change options' in the top corner of the screen.</p>
+                <br>
+
+                <p>Enjoy!</p>
+
+            </div>
+
+        </div>
+
+        <section class="chances">
+            <h4>Life</h4>
+
+            <div class="hearts"></div>
+
+            <p class="game-over"></p>
+        </section>
+
+        <section class="letter-box">
+                <h4>Letter box:</h4>
+
+                <div class="letters-used"></div>
+
+        </section>
+        
+        <div class="restart-game">
+            <button class="restart-button">Restart</button>
+            <button class="next-button">Next</button>
+            <button class="start-button">Start!</button>
+        </div>
+
+    </main>
+
+    
+    <!-- JavaScript -->
+    <script src="levelChoice.js"></script>
+    <script src="themeChoice.js"></script>
+    <script src="script.js"></script>
+    <script src="renderGame.js"></script>
+    <script src="lettersBox.js"></script>
+    <script src="restart.js"></script>
+    <script src="validateInput.js"></script>
+    <script src="sortWord.js"></script>
+    <script src="changeOptions.js"></script>
+    <script src="gameInstructions.js"></script>
+
+</body>
+
+</html>
