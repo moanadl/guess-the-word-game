@@ -7,6 +7,10 @@ changeOptionsButton.onclick = changeOptions;
 // ----- Restarts the game to the point of chosing new difficulty levels and new theme -----
 function changeOptions () {
 
+    if (input.style.display === 'inline-block') {
+        restartButton.style.display = 'none';
+        speakButton.style.display = 'none';
+    }
     wordCode.innerHTML = '';
     infoArea.innerHTML = '';
     input.disabled = false;
@@ -14,7 +18,6 @@ function changeOptions () {
     lettersUsed.innerHTML = ''
     input.style.display = 'none';
     levelChoice.style.display = 'block';
-    buttonRestart.style.display = 'none';
     nextButton.style.display = 'inline-block';
     choiceControl = false;
 

@@ -48,6 +48,7 @@ function prepareGame () {
         chancesSection.style.display = 'flex';
         letterBoxSection.style.display = 'flex';
         restartButton.style.display = 'inline-block';
+        speakButton.style.display = 'inline-block'
         themeHeader.innerHTML = `${chosenTheme}`;
         sortSecretWord();
     } else {

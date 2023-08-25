@@ -33,4 +33,9 @@ function restart () {
     lettersBox();
     sortSecretWord();
 
+    if (speakButton.className.includes('speak-active')) {
+        speakButton.innerHTML = 'Speak';
+        speakButton.classList.toggle('speak-active');
+    }
+
 }

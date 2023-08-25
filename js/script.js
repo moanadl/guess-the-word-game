@@ -40,9 +40,33 @@ function startGame (secretWord) {
     let halfHeartCount = 0;
     let emptyHeartCount = 1;
     
-    // ----- On input event for the input calling the function "guessTheLetters" -----
+    // ----- The user has two options to insert the letter: typing it on input or using the speech recognition API -----
+
+    // ----- Typing: 'On input' event for the input calling the function "guessTheLetters" -----
     input.oninput = guessTheLetters;
 
+    // ----- Speech recognition API: 'Click' event for the button 'Speak'-----
+    // ----- If the word has already been guessed, return -----
+    // ----- When the user clicks 'Speak' the code will start the speech recognition -----
+    // ----- When the user click for the second time (now the button says "Send guess") the code will call 'guessTheLetters' -----
+    speakButton.onclick = function () {
+
+        if (arrayOfWord.toString().toUpperCase().replace(/,/g, "") === secretWord.replace(/-/g, "") || gameOver.innerHTML === 'Game Over!') {
+            return
+        }
+
+        if (this.className.includes('speak-active')) {
+            speakButton.innerHTML = 'Speak';
+            speakButton.classList.toggle('speak-active');
+            guessTheLetters()
+        } else {
+            speakButton.classList.toggle('speak-active');
+            guessRecognition.start();
+            infoArea.innerHTML = `<p class='info-text'>Say "Letter" + your guess...</p>`
+            speakButton.innerHTML = 'Send guess';
+        }
+    }
+    
     // ----- This function will verify which letters have been guessed and will control the guesses left -----
     function guessTheLetters () {
 
@@ -188,14 +212,3 @@ function startGame (secretWord) {
     }
 
 }
-
-
-
-/*
-    1. levelChoice;
-    2. themeChoice;
-    3. sortWord;
-    4. script;
-    5. renderGame;
-    6. validateInput;
-*/
